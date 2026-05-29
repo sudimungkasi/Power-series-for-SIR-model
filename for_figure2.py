@@ -125,18 +125,23 @@ err_R = np.abs((1-S_ps-I_ps) - (1-S_num-I_num))
 t_check = np.array([1.0, 2.0, 4.0, 8.0])
 S_num_c = sol.sol(t_check)[0]
 I_num_c = sol.sol(t_check)[1]
+R_num_c = 1 - S_num_c - I_num_c
 S_ps_c  = eval_power_series(t_check, s_float)
 I_ps_c  = eval_power_series(t_check, i_float)
+R_ps_c  = 1 - S_ps_c - I_ps_c
 
 print("\n" + "="*95)
 print(f"{'t':>6} | {'S_RK45':>14} | {'S_PS9':>14} | {'|err_S|':>14} "
-      f"| {'I_RK45':>14} | {'I_PS9':>14} | {'|err_I|':>14}")
+      f"| {'I_RK45':>14} | {'I_PS9':>14} | {'|err_I|':>14} "
+      f"| {'R_RK45':>14} | {'R_PS9':>14} | {'|err_R|':>14} ")
 print("-"*95)
 for k in range(len(t_check)):
     print(f"{t_check[k]:>6.1f} | {S_num_c[k]:>14.8f} | {S_ps_c[k]:>14.8f} | "
           f"{abs(S_ps_c[k]-S_num_c[k]):>14.4e} | "
           f"{I_num_c[k]:>14.8f} | {I_ps_c[k]:>14.8f} | "
-          f"{abs(I_ps_c[k]-I_num_c[k]):>14.4e}")
+          f"{abs(I_ps_c[k]-I_num_c[k]):>14.4e} | "
+          f"{R_num_c[k]:>14.8f} | {R_ps_c[k]:>14.8f} | "
+          f"{abs(R_ps_c[k]-R_num_c[k]):>14.4e}")
 print("="*95)
 
 # ─────────────────────────────────────────────────────────────────────────────
