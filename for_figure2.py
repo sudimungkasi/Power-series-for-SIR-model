@@ -137,11 +137,11 @@ print(f"{'t':>6} | {'S_RK45':>14} | {'S_PS9':>14} | {'|err_S|':>14} "
 print("-"*95)
 for k in range(len(t_check)):
     print(f"{t_check[k]:>6.1f} | {S_num_c[k]:>14.8f} | {S_ps_c[k]:>14.8f} | "
-          f"{abs(S_ps_c[k]-S_num_c[k]):>14.4e} | "
+          f"{abs(S_ps_c[k]-S_num_c[k]):>14.8e} | "
           f"{I_num_c[k]:>14.8f} | {I_ps_c[k]:>14.8f} | "
-          f"{abs(I_ps_c[k]-I_num_c[k]):>14.4e} | "
+          f"{abs(I_ps_c[k]-I_num_c[k]):>14.8e} | "
           f"{R_num_c[k]:>14.8f} | {R_ps_c[k]:>14.8f} | "
-          f"{abs(R_ps_c[k]-R_num_c[k]):>14.4e}")
+          f"{abs(R_ps_c[k]-R_num_c[k]):>14.8e}")
 print("="*95)
 
 # ─────────────────────────────────────────────────────────────────────────────
